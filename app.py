@@ -15,10 +15,14 @@ ac_units = st.number_input(
 )
 
 if st.button("Predict"):
+
+    if ac_units<10 or ac_units>150:
+        st.error("Input value out of range")
+    else:
     
-    data = [[ac_units]]
-    data_poly = poly.transform(data)
+        data = [[ac_units]]
+        data_poly = poly.transform(data)
 
-    prediction = model.predict(data_poly)
+        prediction = model.predict(data_poly)
 
-    st.success(f"Expected Electric Bill: {prediction[0]:.2f}")
+        st.success(f"Expected Electric Bill: {prediction[0]:.2f}")
