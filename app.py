@@ -16,7 +16,7 @@ ac_units = st.number_input(
 
 if st.button("Predict"):
 
-    if ac_units<=10 or ac_units>150:
+    if ac_units<=9 or ac_units>150:
         st.error("Input value out of range")
     else:
     
